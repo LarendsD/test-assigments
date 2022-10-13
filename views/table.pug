@@ -1,0 +1,55 @@
+extends ./layout.pug
+
+block header
+  = `Сводка эксперимента. Всего устройств: ${experiments.length}`
+
+  - const buildPercent = (devices, option, value) => {
+  -   const filteredDevices = devices.filter((device) => device[option] === value)
+  -   return _.round((filteredDevices.length / devices.length) * 100, 2);
+  - }
+
+block content
+    h1 Распределение между опциями
+
+    table.table.table-dark.table-stripped
+      thead
+        tr 
+          th= 'color_button'
+            table.table.table-dark.table-stripped
+              thead
+                tr
+                  th= '#FF0000'
+                  th= '#00FF00'
+                  th= '#0000FF'
+              tbody
+                tr
+                  td= `${buildPercent(experiments, 'button_color', '#FF0000')}%`
+                  td= `${buildPercent(experiments, 'button_color', '#00FF00')}%`
+                  td= `${buildPercent(experiments, 'button_color', '#0000FF')}%`
+          th='price'
+            table.table.table-dark.table-striped
+              thead
+                tr
+                  th= '5'
+                  th= '10'
+                  th= '20'
+                  th= '50'
+              tbody
+                tr
+                  td= `${buildPercent(experiments, 'price', 5)}%`
+                  td= `${buildPercent(experiments, 'price', 10)}%`
+                  td= `${buildPercent(experiments, 'price', 20)}%`
+                  td= `${buildPercent(experiments, 'price', 50)}%`
+
+    table.table.table-dark.table-striped
+      thead
+        tr
+          th= 'Device'
+          th= 'color_button'
+          th= 'price'
+      tbody
+        each experiment in experiments
+          tr
+            td= experiment.device
+            td= experiment.button_color
+            td= experiment.price
