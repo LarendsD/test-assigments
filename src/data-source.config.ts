@@ -1,7 +1,7 @@
 import { DataSourceOptions } from 'typeorm';
 import { config } from 'dotenv';
 import { Experiments } from './entities/experiment.entity';
-import { migrations1665498759905 } from './migrations/1665498759905-migrations';
+import { migrations1665676069133 } from './migrations/1665676069133-migrations';
 
 export default (): DataSourceOptions => {
   config();
@@ -16,7 +16,7 @@ export default (): DataSourceOptions => {
         url: process.env.DATABASE_URL,
         ssl: { rejectUnauthorized: false },
         entities: [`${__dirname}/entities/*.entity.{ts,js}`],
-        migrations: [migrations1665498759905],
+        migrations: [migrations1665676069133],
       };
     case 'test':
       return {
@@ -24,14 +24,14 @@ export default (): DataSourceOptions => {
         synchronize: true,
         database: ':memory:',
         entities: [Experiments],
-        migrations: [migrations1665498759905],
+        migrations: [migrations1665676069133],
       };
     default:
       return {
         type: 'sqlite',
         database: 'test-assigments.sqlite',
         entities: [Experiments],
-        migrations: [migrations1665498759905],
+        migrations: [migrations1665676069133],
       };
   }
 };
