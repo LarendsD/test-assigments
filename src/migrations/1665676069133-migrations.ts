@@ -1,15 +1,44 @@
-import { MigrationInterface, QueryRunner } from 'typeorm';
+import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class migrations1665676069133 implements MigrationInterface {
   name = 'migrations1665676069133';
 
   public async up(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.query(
-      `CREATE TABLE "experiments" ("id" SERIAL NOT NULL, "device" character varying NOT NULL, "button_color" character varying NOT NULL, "price" integer NOT NULL, CONSTRAINT "PK_aafe1321d916fac58ba06ad8178" PRIMARY KEY ("id"))`,
+    await queryRunner.createTable(
+      new Table({
+        name: 'experiments',
+        columns: [
+          {
+            name: 'id',
+            type: 'integer',
+            isGenerated: true,
+            generatedIdentity: 'ALWAYS',
+            generationStrategy: 'increment',
+            isNullable: false,
+            isPrimary: true,
+          },
+          {
+            name: 'device',
+            type: 'character',
+            isNullable: false,
+            isUnique: true,
+          },
+          {
+            name: 'button_color',
+            type: 'character',
+            isNullable: false,
+          },
+          {
+            name: 'price',
+            type: 'integer',
+            isNullable: false,
+          },
+        ],
+      }),
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.query(`DROP TABLE "experiments"`);
+    await queryRunner.dropTable('experiments');
   }
 }
