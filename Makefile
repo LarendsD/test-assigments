@@ -14,3 +14,9 @@ db-generate:
 
 db-migrate:
 	npm run typeorm -- migration:run -d src/data-source.ts
+
+test-e2e:
+	npm run test:e2e
+
+start-test:
+	npm run test

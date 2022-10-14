@@ -27,3 +27,13 @@ make start-dev
 ```bash
 localhost:3000
 ```
+
+### Запустить тесты:
+```bash
+make start-test
+```
+
+### Запустить e2e-тесты:
+```bash
+make test-e2e
+```
