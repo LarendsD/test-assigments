@@ -1,39 +1,39 @@
-# <a href='https://github.com/appbooster/test-assignments/blob/master/tasks/backend.md'>Тестовое задание</a> от компании <a href='https://appbooster.com/'>Appbooster</a>
+# <a href='https://github.com/appbooster/test-assignments/blob/master/tasks/backend.md'>Test task</a> from <a href='https://appbooster.com/'>Appbooster</a>
 
-# Система для AB-тестов
+# System for AB-tests
 
-## Как работает:
-1. Вы отправляете GET-запрос на главную страницу с заголовком Device-Token, в котором указываете токен устройства
-2. В ответ сервер Вам отдает список опций
-3. Полную статистику обо всех устройствах и установленных опциях можно посмотреть по адресу /stat
+## How it works:
+1. You sending GET-request on main page with header 'Device-Token'
+2. In response server will send options list
+3. Full statistics about all devices and options may see on route /stat 
 
-## Доступно <a href='https://test-task-node.herokuapp.com/'>онлайн</a>
+## Available <a href='https://test-task-node.herokuapp.com/'>online</a>
 
-## Установка локально:
-1. Склонируйте данный репозиторий локально
-2. В директории локального репозитория введите:
+## Local setup:
+1. Clone this repo locally
+2. In local repo directory run this in command line:
 ```bash
 make setup
 ```
-### Для запуска в обычном режиме введите:
+### To start in normal mode, enter:
 ```bash
 make start
 ```
-### Для запуска в режиме разработки:
+### To start in development mode, enter:
 ```bash
 make start-dev
 ```
-### Будет доступно по адресу:
+### Started app will available in link below:
 ```bash
 localhost:3000
 ```
 
-### Запустить тесты:
+### Run tests:
 ```bash
 make start-test
 ```
 
-### Запустить e2e-тесты:
+### Run e2e-tests:
 ```bash
 make test-e2e
 ```
