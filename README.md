@@ -7,7 +7,7 @@
 2. In response server will send options list
 3. Full statistics about all devices and options may see on route /stat 
 
-## Available <a href='https://test-task-node.herokuapp.com/'>online</a>
+## Available <a href='https://test-assigments-production.up.railway.app/'>online</a>
 
 ## Local setup:
 1. Clone this repo locally

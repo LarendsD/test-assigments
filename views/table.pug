@@ -23,9 +23,9 @@ block content
                   th= '#0000FF'
               tbody
                 tr
-                  td= `${buildPercent(experiments, 'button_color', '#FF0000') ?? 0}%`
-                  td= `${buildPercent(experiments, 'button_color', '#00FF00') ?? 0}%`
-                  td= `${buildPercent(experiments, 'button_color', '#0000FF') ?? 0}%`
+                  td= `${buildPercent(experiments, 'button_color', '#FF0000') || 0}%`
+                  td= `${buildPercent(experiments, 'button_color', '#00FF00') || 0}%`
+                  td= `${buildPercent(experiments, 'button_color', '#0000FF') || 0}%`
           th='price'
             table.table.table-dark.table-striped
               thead
@@ -36,10 +36,10 @@ block content
                   th= '50'
               tbody
                 tr
-                  td= `${buildPercent(experiments, 'price', 5) ?? 0}%`
-                  td= `${buildPercent(experiments, 'price', 10) ?? 0}%`
-                  td= `${buildPercent(experiments, 'price', 20) ?? 0}%`
-                  td= `${buildPercent(experiments, 'price', 50) ?? 0}%`
+                  td= `${buildPercent(experiments, 'price', 5) || 0}%`
+                  td= `${buildPercent(experiments, 'price', 10) || 0}%`
+                  td= `${buildPercent(experiments, 'price', 20) || 0}%`
+                  td= `${buildPercent(experiments, 'price', 50) || 0}%`
 
     table.table.table-dark.table-striped
       thead
